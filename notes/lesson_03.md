@@ -1,6 +1,7 @@
 ## Wskazówki dla PyCharm - skróty i narzędzia
 
-* **Scratch file (pliki robocze):** Jeśli chcesz szybko wypróbować jakiś fragment kodu lub zrobić notatkę, a nie chcesz tworzyć nowego pliku w projekcie, użyj funkcji Scratch File. Tworzy ona tymczasowy plik poza strukturą projektu (nie będzie dodany do Gita). W PyCharm skrót to **Ctrl + Alt + Shift + Insert**
+* **Scratch file (pliki robocze):** Jeśli chcesz szybko wypróbować jakiś fragment kodu lub zrobić notatkę, a nie chcesz tworzyć nowego pliku w projekcie, użyj funkcji Scratch File. Tworzy ona tymczasowy plik poza strukturą projektu (nie będzie dodany do Gita). W PyCharm skrót to 
+`Ctrl + Alt + Shift + Insert`
 
 * **Formatowanie i czyszczenie kodu przy commicie:** PyCharm ma opcje automatycznych akcji przed commitem. W oknie Commit możesz zaznaczyć m.in.: Reformat code, Rearrange code, Optimize imports, Perform code cleanup.
 
@@ -14,7 +15,7 @@
 
 * **Ręczne reformatowanie kodu:** W dowolnym momencie możesz sformatować aktualnie otwarty plik kodu skrótem *Ctrl + Alt + L* (Windows/Linux) lub *⌥⌘L (macOS)*
 
-* **Komentowanie i odkomentowanie kodu:** Aby szybko zakomentować jedną lub wiele linii kodu, zaznacz je i użyj Ctrl + / (Ctrl plus ukośnik; na polskiej klawiaturze to Ctrl + znak ?, bo ? jest na tym samym klawiszu co /). Ten skrót przełącza komentowanie – jeśli linie nie były komentowane, doda # na początku, a jeśli były – usunie go
+* **Komentowanie i odkomentowanie kodu:** Aby szybko zakomentować jedną lub wiele linii kodu, zaznacz je i użyj Ctrl + /).git add Ten skrót przełącza komentowanie – jeśli linie nie były komentowane, doda # na początku, a jeśli były – usunie go
 
 **Polecenia systemowe w terminalu:**
 
@@ -41,7 +42,9 @@ Obie służą do wypisania plików i folderów. Możesz użyć ich zamiennie w z
     - `Shift+Arrow Up` to select multiple blocks of code
     - `Ctrl+S` to save notebook
 
-  **Podstawowe typy danych w Pythonie:** Wbudowane typy proste w Pythonie to:
+  **Podstawowe typy danych w Pythonie:** 
+  
+Wbudowane typy proste w Pythonie to:
 
 * **int** – liczby całkowite (np. 1, 42, -7).
 
