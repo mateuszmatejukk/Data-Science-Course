@@ -13,3 +13,8 @@ jupyterlab
 ## Machine learning tools
 scipy
 scikit-learn
+
+## jupyter lab formatting tools
+jupyterlab-code-formatter
+black
+isort
