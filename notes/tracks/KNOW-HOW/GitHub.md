@@ -5,8 +5,8 @@
 3. **.gitignore** – pliki, które nie są śledzone w repozytorium
 4. **License**
 
-🔹 *JetBrains Toolbox*
-🔹 *Zapewnić dostęp użytkownikom*
+*JetBrains Toolbox*
+*Zapewnić dostęp użytkownikom*
 
 ---
 
