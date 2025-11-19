@@ -73,4 +73,3 @@ text[::-1] → 'nohtyP'
 | text[i:j:k] | co k znaków od i do j-1 | text[::2]  | 'Pto'    |
 | text[::-1]  | odwrócenie stringa      | text[::-1] | 'nohtyP' |
 
--
