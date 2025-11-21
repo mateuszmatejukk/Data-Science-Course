@@ -1,5 +1,4 @@
 import random
-
 print("This program generates a random integer from 1 to 10 and let you guess it")
 a = random.randint(1, 10)  # losuje 1 z 1-10
 while True:
@@ -8,7 +7,7 @@ while True:
         print(f'You exit, my number was {a}')
         break
     elif b.isdigit():
-        b = int(b)  # zamiana z tekstu na liczbe calkowita
+        b = int(b)  # str na int
         if 1 <= b <= 10:
             if b == a:
                 print("Congratulations, you guessed it!")
