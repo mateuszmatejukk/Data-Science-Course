@@ -1,14 +1,16 @@
 import random
-print("This program generates a random integer from 1 to 10 and let you guess it")
-a = random.randint(1, 10)  # losuje 1 z 1-10
+
+print("This program generates a random integer from 1 to a number entered by you and let you guess it")
+x = int(input("Please enter the maximum integer number: "))
+a = random.randint(1, x)  # losuje 1 do x
 while True:
-    b = input("Give a number from 1 to 10 or press 'Q' to exit")
+    b = input(f'Give a number from 1 to {x} or press "Q" to exit ')
     if b.upper() == "Q":
         print(f'You exit, my number was {a}')
         break
     elif b.isdigit():
         b = int(b)  # str na int
-        if 1 <= b <= 10:
+        if 1 <= b <= x:
             if b == a:
                 print("Congratulations, you guessed it!")
                 break
