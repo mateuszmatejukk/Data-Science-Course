@@ -1,30 +1,6 @@
-# %%
-# diameter = 10
-# pi = 3.1416
-# circle = {
-#     'diameter': diameter,
-#     'radius': (radius := diameter / 2),
-#     'area': pi * radius ** 2,
-#     'circumference': 2 * pi * radius
-# }
-# # test
-# diameter = 10
-# pi = 3.1416
-# radius = diameter / 2
-# circle = {
-#     'diameter': diameter,
-#     'radius': radius,
-#     'area': pi * radius ** 2,
-#     'circumference': 2 * pi * radius
-# }
-# circle
+import random
 
-# pytania
-# losowenie pytan z puli
-# gra
-# Millionaires.py
-
-
+# pytani
 questions = [
     {
         "text": "Pytanie 1.: W ilu stopnia Celsjusza woda wrze?",
@@ -37,7 +13,7 @@ questions = [
         "correct": "c",
         "prize": 1000,
         "guaranteed": False,
-        "fifty_fifty": ("a", "c"),  # zostaną a i c, c jest poprawne
+        "fifty_fifty": ("a", "c"),
     },
     {
         "text": "Pytanie 2.: W którym roku miała miejsce bitwa pod Waterloo?",
@@ -49,8 +25,8 @@ questions = [
         },
         "correct": "b",
         "prize": 2000,
-        "guaranteed": True,  # gwarantowane 2 000 zł po poprawnej odpowiedzi
-        "fifty_fifty": ("a", "b"),  # jak w Twoim Case 2
+        "guaranteed": True,
+        "fifty_fifty": ("a", "b"),
     },
     {
         "text": "Pytanie 3.: W którym roku miała miejsce bitwa pod Grunwaldem?",
@@ -156,5 +132,52 @@ questions = [
         "guaranteed": True,
         "fifty_fifty": ("a", "b"),
     },
-
 ]
+
+
+# zadania pytania i sprawdzenia odp
+def ask_question(question):
+    print(question["text"])
+    for key, value in question["answers"].items():
+        print(f"{key}. {value}")
+
+    # Pytanie o odpowiedź
+    answer = input("Wybierz odpowiedź (a/b/c/d): ").lower()
+
+    # Sprawdzenie odpowiedzi
+    if answer == question["correct"]:
+        print("Dobrze! Odpowiedź poprawna.\n")
+        return True
+    else:
+        print(f"Niestety, zła odpowiedź. Poprawna odpowiedź to {question['correct']}.\n")
+        return False
+
+
+# uruchomienia gry
+def play_game():
+    total_prize = 0
+    guaranteed_prize = 0
+    for i, question in enumerate(random.sample(questions, len(questions))):
+        print(f"*** Pytanie {i + 1} ***")
+        if question["guaranteed"]:
+            guaranteed_prize = question["prize"]
+            print(f"Masz gwarantowaną nagrodę {guaranteed_prize} zł!")
+
+        # Koło ratunkowe 50:50
+        use_fifty_fifty = input("Czy chcesz użyć koła ratunkowego 50:50? (tak/nie): ").lower() == "tak"
+        if use_fifty_fifty:
+            print(f"Pozostałe odpowiedzi to: {question['fifty_fifty'][0]} i {question['fifty_fifty'][1]}")
+
+        # Zadanie pytania
+        if ask_question(question):
+            total_prize += question["prize"]
+            print(f"Twoja nagroda za to pytanie to {question['prize']} zł.")
+        else:
+            print(f"Zakończyłeś grę z nagrodą {total_prize + guaranteed_prize} zł.")
+            break
+    else:
+        print(f"Gratulacje! Wygrałeś {total_prize + guaranteed_prize} zł.")
+
+
+if __name__ == "__main__":
+    play_game()
