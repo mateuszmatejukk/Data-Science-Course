@@ -13,8 +13,3 @@ Data Science Course
                 │   └── 01_task_name.py    <- Python file for a specific homework task.
                 └── 01_lessonname.py        <- Python file for the lesson content.
 ```
-# homework 
-- markdown syntax
-- PyCharm Professional/Education
-- take notes from Wojtek
-- next lesson: create Github Repository
