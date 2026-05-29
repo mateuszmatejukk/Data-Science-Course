@@ -11,12 +11,38 @@ class TicTacToe:
     1...
     2...
     3...
+
+    >>> game = TicTacToe(board_size=3)
+    >>> game.move(row=0, col=1, player='X')
+    >>> game.print_board()
+    .ABC
+    1.X.
+    2...
+    3...
+
+
+    >>> game = TicTacToe(board_size=3)
     >>> game.move(row=0, col=0, player='X')
     >>> game.print_board()
     .ABC
     1X..
     2...
     3...
+
+    >>> game = TicTacToe(board_size=2)
+    >>> game.move(row=1, col=1, player='O')
+    >>> game.print_board()
+    .AB
+    1..
+    2.O
+
+
+    >>> game = TicTacToe(board_size=3)
+    >>> game.move(row=0, col=0, player='X')
+    >>> game.move(row=0, col=0, player='O')
+    Traceback (most recent call last):
+    ...
+    ValueError: To pole jest już zajęte
     """
 
     def __init__(self, board_size):
@@ -28,16 +54,23 @@ class TicTacToe:
         letters = 'ABCDEFGHIJKLMNOPRS'
         print('.' + letters[:self.board_size])
         for index in range(self.board_size):
-            print(f"{index + 1}{self.board[index]}")
+            # print(f"{index + 1}{self.board[index]}")
+            row = ''.join(self.board[index])
+            print(f"{index + 1}{row}")
 
     def move(self, row, col, player):
+        # self.board[row][col] = player
+        if self.board[row][col] != '.':
+            raise ValueError('To pole jest już zajęte')
+
         self.board[row][col] = player
 
 
 if __name__ == '__main__':
+
     game = TicTacToe(board_size=3)
     game.move(row=0, col=0, player='X')
-    print(game.board)
+    game.print_board()
 
 # TODO: 1['X', '.', '.'] --> 1X..
 # TODO: dopisać kolejne testy game.move(row=1, col=1, player='O')
