@@ -71,9 +71,3 @@ if __name__ == '__main__':
     game = TicTacToe(board_size=3)
     game.move(row=0, col=0, player='X')
     game.print_board()
-
-# TODO: 1['X', '.', '.'] --> 1X..
-# TODO: dopisać kolejne testy game.move(row=1, col=1, player='O')
-#       ...
-# TODO: sprawdić dla 3x3 oraz 2x2 czy działa to wszystko
-# TODO: zastanów się co zrobić jeśli pole zajęta.
