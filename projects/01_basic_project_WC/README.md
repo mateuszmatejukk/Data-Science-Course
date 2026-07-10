@@ -66,7 +66,7 @@ WYBIERZ OPERACJE
 
 # QUIZ - Milionerzy
 
-[//]: # (TODO: napisz wymagania - przykładową interakcję)
+[//]: # (: napisz wymagania - przykładową interakcję)
 
 - odpowiadasz na pytanie albo pasujesz
 - (opt) 50/50 pytań

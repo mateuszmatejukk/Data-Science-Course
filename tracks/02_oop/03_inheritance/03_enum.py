@@ -88,12 +88,15 @@ class Task:
     >>> task = Task("Write report")
     >>> str(task)
     'Write report | Status: PENDING'
+
     >>> task = Task("Example task", STATUS.IN_PROGRESS)
-    >>> print(str(task.status))
-    Status.IN_PROGRESS
+    >>> print(task.status)
+    STATUS.IN_PROGRESS
+
     >>> task.update_status(STATUS.COMPLETED)
-    >>> print(str(task.status))
-    Status.COMPLETED
+    >>> print(task.status)
+    STATUS.COMPLETED
+
     >>> task.update_status("Completed")
     Traceback (most recent call last):
     ...
@@ -101,7 +104,17 @@ class Task:
     """
 
     def __init__(self, title, status=STATUS.PENDING):
+        if not isinstance(status, STATUS):
+            raise ValueError("Invalid status")
+
         self.title = title
         self.status = status
 
-# TODO
+    def update_status(self, new_status):
+        if not isinstance(new_status, STATUS):
+            raise ValueError("Invalid status")
+
+        self.status = new_status
+
+    def __str__(self):
+        return f"{self.title} | Status: {self.status.name}"
